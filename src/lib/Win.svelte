@@ -47,6 +47,7 @@
 		line-height: 72px;
 		color: #1D355D;
 		margin-top: 72px;
+		margin-bottom: 10px;
 	}
 
 	.content p {

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Signature from "$lib/Signature.svelte";
 	import Question from "$lib/Question.svelte";
+  	import Win from "$lib/Win.svelte";
 
 	let score: number = 0;
 	let end: boolean = false;
@@ -11,7 +12,7 @@
 </svelte:head>
 
 <Signature />
-<Question
+<!-- <Question
 	bind:score={score}
 	bind:end={end}
 	question="Work in progress"
@@ -31,4 +32,5 @@
 			}
 		]
 	}
-/>
+/> -->
+<Win bind:end={end} bind:score={score} />

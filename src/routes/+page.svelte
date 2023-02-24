@@ -1,2 +1,34 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Signature from "$lib/Signature.svelte";
+	import Question from "$lib/Question.svelte";
+
+	let score: number = 0;
+	let end: boolean = false;
+</script>
+
+<svelte:head>
+	<title>Country quiz</title>
+</svelte:head>
+
+<Signature />
+<Question
+	bind:score={score}
+	bind:end={end}
+	question="Work in progress"
+	responses={
+		[
+			{
+				response: "First response",
+				value: true
+			},
+			{
+				response: "Second response",
+				value: false
+			},
+			{
+				response: "Other response",
+				value: false
+			}
+		]
+	}
+/>

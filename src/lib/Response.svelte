@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type {ResponseType} from '$lib/ResponseType'
+
 	export let letter: string;
 	export let response: ResponseType;
 	export let clicked: boolean;
 	export let score: number;
 	export let end: boolean;
-
-	let internalClicked: boolean = false;
+	export let internalClicked: boolean;
 </script>
 
 <button

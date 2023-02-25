@@ -12,6 +12,7 @@
 
 	let clicked: boolean = false;
 	let letter = "A";
+	let internalClicked: boolean[] = [false, false, false, false];
 
 	function nextLetter() {
 		let charCode = letter.charCodeAt(0);
@@ -21,6 +22,7 @@
 
 	function nextButton() {
 		clicked = false;
+		internalClicked = [false, false, false, false];
 		newQuestion();
 	}
 </script>
@@ -31,13 +33,14 @@
 	<div class="content">
 		<img src={flag} alt="" />
 		<h1>{question}</h1>
-		{#each responses as response}
+		{#each responses as response, i}
 			<Response
 				letter={nextLetter()}
 				bind:response={response}
 				bind:clicked={clicked}
 				bind:score={score}
 				bind:end={end}
+				bind:internalClicked={internalClicked[i]}
 			/>
 		{/each}
 		{#if clicked}

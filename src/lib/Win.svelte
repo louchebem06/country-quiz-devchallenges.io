@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let score: number;
-	export let end: boolean;
+	export let tryAgain: any;
 </script>
 
 <div class="container">
@@ -9,7 +9,7 @@
 		<img src="/undraw_winners_ao2o 2.svg" alt="" />
 		<h2>Results</h2>
 		<p>You got <b>{score}</b> correct answers</p>
-		<button>Try again</button>
+		<button on:click={tryAgain}>Try again</button>
 	</div>
 </div>
 

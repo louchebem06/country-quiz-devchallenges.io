@@ -1,12 +1,15 @@
 <script lang="ts">
+	import type {ResponseType} from '$lib/ResponseType'
 	import Response from "$lib/Response.svelte";
-  import NextButton from "$lib/NextButton.svelte";
+  	import NextButton from "$lib/NextButton.svelte";
 
 	export let question: string;
 	export let flag: string = "";
-	export let responses: {response: string, value: boolean}[];
+	export let responses: ResponseType[];
 	export let score: number;
 	export let end: boolean;
+	export let newQuestion: any;
+
 	let clicked: boolean = false;
 	let letter = "A";
 
@@ -17,8 +20,8 @@
 	}
 
 	function nextButton() {
-		console.log(`Score: ${score}`);
-		console.log(`End: ${end}`);
+		clicked = false;
+		newQuestion();
 	}
 </script>
 
@@ -31,7 +34,7 @@
 		{#each responses as response}
 			<Response
 				letter={nextLetter()}
-				{response}
+				bind:response={response}
 				bind:clicked={clicked}
 				bind:score={score}
 				bind:end={end}
@@ -80,6 +83,13 @@
 		line-height: 36px;
 		color: #2F527B;
 		text-transform: none;
+	}
+
+	.content img {
+		filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.1));
+		border-radius: 4px;
+		width: 84px;
+		margin: 28px 0;
 	}
 
 	@media screen and (max-width: 560px) {

@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type {ResponseType} from '$lib/ResponseType'
 	export let letter: string;
-	export let response: {response: string, value: boolean};
+	export let response: ResponseType;
 	export let clicked: boolean;
 	export let score: number;
 	export let end: boolean;

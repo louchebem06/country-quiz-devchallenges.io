@@ -12,7 +12,6 @@ body {
 	height: 100vh;
 	background-image: url('./background.png');
 	background-position: center;
-	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
 	justify-content:center;

@@ -102,4 +102,10 @@
 			margin: 0 12px;
 		}
 	}
+
+	@media screen and (max-height: 600px) {
+		.container {
+			transform: translateY(0);
+		}
+	}
 </style>
